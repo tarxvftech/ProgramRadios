@@ -1,0 +1,119 @@
+:root {
+  /* maximum-amaranth
+   */
+  --amaranth: #DB222A;
+  --maxyellow: #ffba49;
+  --airsupblue: #6ea4bf;
+  --prussian: #0d324d;
+  /* nerv colors 
+   */
+  --nerv5green: #16A73B;
+  --nerv5orange: #F9692A;
+
+  --nerv1yellow: #fca317;
+  /*
+   rgb(252, 163, 23)
+   hsl(37, 97, 54)
+   */
+  --nerv1yellowfaint: hsl(37,97%,5%);
+  --nerv1green: #296644;
+  --nerv1red: #fd4b45;
+  --nerv1black: #010103;
+
+  --nerv2purple: #585c93;
+  --nerv2red: #c81905;
+  --nerv2dgreen: #436940;
+  --nerv2lgreen: #57730f;
+  --nerv2gyellow: #b78c28;
+  --nerv2brown: #8b2f10;
+  --nerv2byellow: #f59b0a;
+  --nerv2dyellow: #e17720;
+
+  --nervhq1dblue: #080723;
+  --nervhq1blue: #072a6c;
+  --nervhq1bblue: #48cce8;
+  --nervhq1yellow: #fdb65b;
+  --nervhq1red: #f81621;
+  --nervhq1orange: #f96721;
+  --nervhq1black: #02010e;
+
+
+  --nerv3red: #820006;
+  --nerv3cyan: #5deba9;
+  --nerv3brown: #b95d23;
+
+  --fogra39: #0B090A;
+  --eerieblack: #161A1D;
+
+  --softgrey: #4a4a4a;
+
+  --grey0: #f8f9fa;
+  --grey1: #e9ecef;
+  --grey2: #dee2e6;
+  --grey3: #ced4da;
+  --grey4: #adb5bd;
+  --grey5: #6c757d;
+  --grey6: #495057;
+  --grey7: #343a40;
+  --grey8: #212529;
+
+  --bg: var(--fogra39);
+  --bgfocus: var(--grey2);
+  --text: var(--nerv1yellow);
+  --bigtext: var(--nerv2byellow);
+
+  --highlights: var(--nerv2red);
+  --attention: var(--nerv2byellow);
+  --information: var(--nerv2dyellow);
+  --debug: var(--nerv2dyellow);
+
+  --success: var(--nerv1green);
+  --warning: var(--nerv2byellow);
+  --danger: var(--nerv2red);
+
+  --separation: var(--grey4);
+  --separation-background: var(--grey1);
+
+  --interaction: var(--nerv1yellow);
+  --interaction-background: var(--nerv1yellowfaint);
+  --interaction-hover: var(--nerv3cyan);
+  --interaction-hover-background: var(--bg);
+
+  --interaction-a: var(--nerv1yellow);
+  --interaction-a-background: var(--grey0);
+  --interaction-a-hover: var(--nerv3cyan);
+  --interaction-a-hover-background: var(--grey0);
+
+  --interaction-separation: var(--nerv3brown);
+  --interaction-hover-separation: var(--nerv1green);
+  --interaction-focus-separation: var(--nerv1green);
+
+
+  -font-family: 'Kelly Slab', cursive;
+  -font-family: 'Libre Barcode 128', cursive;
+  -font-family: 'Orbitron', sans-serif;
+  -font-family: 'VT323', monospace;
+  -font-family: 'Electrolize', sans-serif;
+  -font-family: 'Quantico', sans-serif;
+  -font-family: 'Zen Dots', sans-serif;
+  -font-family: 'Teko', sans-serif;
+  -font-family: 'Changa', sans-serif;
+  -font-family: 'Recursive', sans-serif;
+  -font-family: 'Kanit', sans-serif;
+  -font-family: 'Merriweather Sans', sans-serif;
+  -font-family: 'overpass', sans-serif;
+
+  --ft-title: 'Quantico', monospace;
+  --ft-title: 'Electrolize', monospace;
+  --ft-barcode: 'Libre Barcode 128', monospace;
+  --ft-prose: 'Inter', 'Helvetica';
+  /*
+   https://rsms.me/inter/
+   i want tnum, ss01, ss02, ss03, and maybe salt
+   300 weight for text?
+   */
+}
+/*
+ NERV logo but with XVF and a strawberry leaf or something instead of
+ fig lol
+ */

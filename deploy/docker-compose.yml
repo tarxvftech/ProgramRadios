@@ -1,0 +1,22 @@
+version: '3'
+services:
+  cheep_backend:
+    build:
+      context: ../
+    restart: unless-stopped
+    ports: 
+      - 8100:8100  #standard for backend, or backend w/frontend
+      - 8080:8080  #npm run serve for frontend
+        #can serve them combined with caddy and ssh reverse tunnels, see Caddyfile
+    env_file:
+      - prodenv
+    volumes:
+      - ./data/:/data/
+      - ../backend/:/backend/
+      - ../frontend/:/frontend/
+        #- ./staticdata/:/staticdata/
+  cache:
+    image: memcached
+    entrypoint:
+      - memcached
+      - -m 256

@@ -1,0 +1,12 @@
+//their onboarding expected modules with imports
+//figured it out from the console where Sentry and Sentry.Integrations existed
+Sentry.init({
+    dsn: "https://XXXXXXXXX.ingest.sentry.io/######",
+    integrations: [
+        new Sentry.Integrations.BrowserTracing(),
+    ],
+
+    // We recommend adjusting this value in production, or using tracesSampler
+    // for finer control
+    //tracesSampleRate: 10.0,
+});

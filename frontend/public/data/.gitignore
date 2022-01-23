@@ -1,0 +1,6 @@
+all_firmware/*.bin
+rptrs.json
+rptrs.csv
+users.json
+users.csv
+*.json

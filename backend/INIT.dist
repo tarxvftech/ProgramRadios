@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+source venv/bin/activate
+
+source srcme prodenv
+
+./manage.py migrate
+./manage.py createsuperuser --email admin@localhost --username admin
+
+./manage.py cheep_misc load_all_firmware
+echo <<HEREDOC
+./manage.py shell
+from django_q.models import Schedule
+Schedule.objects.create(
+    func='cheep_misc.misc.load_all_firmware',
+    minutes=30,
+    schedule_type=Schedule.MINUTES,
+    repeats=-1
+)
+HEREDOC

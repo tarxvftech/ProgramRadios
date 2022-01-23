@@ -1,0 +1,14 @@
+#!/bin/bash
+file=$1
+if [[ -z $file ]]; then
+	echo "provide an env_file that needs to be exported for bash use"
+	return
+fi
+if [[ -d venv ]]; then
+	source venv/bin/activate
+fi
+if [[ -d env ]]; then
+	source env/bin/activate
+fi
+export $(grep -v '^#' "$file" | tr "\n" " ")
+

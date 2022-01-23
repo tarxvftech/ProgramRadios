@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!--<script async defer data-domain="" src="hxxps://plausible.io/js/plausible.js"></script>-->
+    <link href="/inter/inter.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Kelly+Slab&family=Libre+Barcode+128&family=Orbitron&family=Quantico&family=VT323&family=Zen+Dots&Teko:wght@300&family=Changa&family=recursive&family=overpass&family=Merriweather+Sans&family=kanit&display=swap" rel="stylesheet">
+    <!-- sentry was slowing stuff down dramatically! -->
+      <link rel="stylesheet" href="/normalize.css">
+      <link rel="stylesheet" href="/augmented-ui.min.css">
+      <link rel="stylesheet" type="text/css" href="/main.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="left">
+          <!--<li><a href="/">Home</a></li>-->
+        </ul>
+      </nav>
+    </header>
+    <noscript>
+      <strong>
+        <%= htmlWebpackPlugin.options.title %> 
+        is a full application for programming codeplugs for certain
+        DMR radios, such as the TYT (previously Tytera) MD-380, MD-390,
+        MD-2017, MD-UV380, MD-UV390, and similar radios (such as RT-3 and
+        RT-3S). 
+        <br>
+        <br>
+
+        It also supports firmware upgrades, radio cloning, and full codeplug read/write support when using Chrome or Chromium on Linux, MacOS, or Android.
+        <br>
+        <br>
+
+        As a full, powerful application, javascript is absolutely
+        required. Sorry!
+      </strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <!--
+    <div class="footer">
+      Created by Mike, W2FBI.
+      Check out my other projects at <a href="https://tarxvf.tech/">TARXVF Tech</a>.
+    </div>
+    -->
+  </body>
+</html>

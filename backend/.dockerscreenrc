@@ -1,0 +1,50 @@
+# shamelessly from
+# http://edeca.net/wp/programs/gnu-screen-config/
+# Look and feel
+#hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+
+# Our warning of activity
+activity "Activity in %t(%n)"
+
+# Left Right meta key mods
+#ALT-,. and ALT-<>
+bindkey "^[<" eval number !echo $WINDOW-1|bc
+bindkey "^[>" eval number !echo $WINDOW+1|bc
+bindkey "^[," prev
+bindkey "^[." next
+
+#end from edeca
+
+#mine follow
+
+startup_message off
+defscrollback 8192
+altscreen on
+defnonblock 5
+#caption always "%{= kd}%{+b r}%n | %h %=%t %c"
+hardstatus alwayslastline "%{= kr}%-w%{+br}%n %t%{-}%+w %=%{= kR}%u%{-}%20`%10`"
+activity              "%C -> %n%f %t activity!"
+bell_msg         "Bell in window %n^G"
+vbell_msg        " *beep*^G "
+bind j focus down
+bind k focus up
+bind o only
+
+#colors
+#attrcolor b ".I"
+#term screen-256color
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
+terminfo rxvt-unicode|xterm-color|xterm-16color|xterm-88color|xterm-256color|rxvt* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#thanks to http://forums.freebsd.org/showthread.php?t=13345 for the help on this one.
+defbce "on" #fixes vim 256 colors with non-black background color
+#hardstatus alwayslastline "%?%{yk}%-Lw%?%{wb}%n*%f %t%?(%u)%?%?%{yk}%+Lw%?"
+#hardstatus alwayslastline "%-Lw%{= kr}%50>%n%f* %t%{-}%+Lw%<"
+
+#idle 500 eval "screen cmatrix -a -u 2 -a -C red -b -s" "idle 0"
+
+screen -t front
+stuff "cd /frontend; npm run serve"
+screen -t back
+stuff "cd /backend; make runserver"
+screen -t qcluster
+stuff "cd /backend; echo '. srcme envfile; python manage.py qcluster' "

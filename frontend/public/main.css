@@ -1,0 +1,323 @@
+* {
+  -border: 1px dashed var(--separation);
+  transition: all .15s ease-in-out 0s ;
+}
+
+
+
+html {
+  font-size: 62.5%;
+  color: var(--text);
+  background-color: var(--bg);
+  font-family: var(--ft-prose);
+  font-feature-settings: "tnum", "ss01", "ss02","ss03", "dlig", "salt","frac";
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.618;
+  color: var(--text);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1.5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word; 
+  font-family: var(--ft-title);
+}
+
+h1 {
+  font-size: 2.35em; 
+}
+
+h2 {
+  font-size: 2.00em; 
+}
+
+h3 {
+  font-size: 1.75em; 
+}
+
+h4 {
+  font-size: 1.5em; 
+}
+
+h5 {
+  font-size: 1.25em; 
+}
+
+h6 {
+  font-size: 1em; 
+}
+
+
+small, sub, sup {
+  font-size: 75%; 
+}
+
+hr {
+  border-color: var(--separation); 
+}
+a {
+  text-decoration: none;
+  border-radius: .2em;
+
+  color: var(--interaction-a); 
+  border-bottom: 1px solid var(--interaction-separation); 
+  padding-bottom: 2px;
+}
+ul li > a {
+  -border-bottom: none;
+  /* if enabled:
+   * don't show links when in a menu, raw 
+   * so if you want links underlined in a ul then have a 
+   * span or something wrapping your li content 
+   */
+}
+a:hover {
+  color: var(--interaction-a-hover); 
+  -background-color: var(--interaction-a-hover-background); 
+  border-bottom: 1px solid var(--interaction-hover-separation); 
+}
+
+ul {
+  padding-left: 1.4em;
+  margin-top: 0px;
+  margin-bottom: 2.5rem; 
+}
+
+li {
+  margin-bottom: 0.4em; 
+}
+
+blockquote {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 1em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-right: 0.8em;
+  border-left: 5px solid var(--separation);
+  margin-bottom: 2.5rem;
+  background-color: var(--separation-background); 
+}
+
+blockquote p {
+  margin-bottom: 0; 
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  margin-top: 0px;
+  margin-bottom: 2.5rem; 
+}
+
+/* Pre and Code */
+pre {
+  background-color: var(--separation-background);
+  display: block;
+  padding: 1em;
+  overflow-x: auto;
+  margin-top: 0px;
+  margin-bottom: 2.5rem; 
+}
+
+code {
+  font-size: 0.9em;
+  padding: 0 0.5em;
+  background-color: var(--separation-background);
+  white-space: pre-wrap; 
+}
+
+pre > code {
+  padding: 0;
+  background-color: transparent;
+  white-space: pre; 
+}
+
+/* Tables */
+table {
+  text-align: justify;
+  width: 100%;
+  border-collapse: collapse; 
+}
+
+td, th {
+  padding: 0.5em;
+  border-bottom: 1px solid var(--separation); 
+}
+
+/* Buttons, forms and input */
+input, textarea {
+  border: 1px solid #4a4a4a; 
+}
+input:focus, textarea:focus {
+  border: 1px solid var(--interaction-focus-separation); 
+}
+
+textarea {
+  width: 100%; 
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: var(--interaction-background);
+  color: var(--interaction);
+  border-radius: 1px;
+  border: 1px solid var(--interaction-separation);
+  cursor: pointer;
+  box-sizing: border-box; 
+}
+.button[disabled], button[disabled], input[type="submit"][disabled], input[type="reset"][disabled], input[type="button"][disabled] {
+  cursor: default;
+  opacity: .5; 
+}
+
+
+.button:focus:enabled, .button:hover:enabled, button:focus:enabled,
+button:hover:enabled, input[type="submit"]:focus:enabled,
+input[type="submit"]:hover:enabled, input[type="reset"]:focus:enabled,
+input[type="reset"]:hover:enabled, input[type="button"]:focus:enabled,
+input[type="button"]:hover:enabled {
+  background-color: var(--interaction-hover-background);
+  border-color: var(--interaction-hover-separation);
+  color: var(--interaction-hover);
+  outline: 0; 
+}
+
+textarea, select, input {
+  color: var(--text);
+  padding: 6px 10px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  margin-bottom: 10px;
+  background-color: var(--bg);
+  border: 1px solid var(--interaction-separation);
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; 
+}
+textarea:focus, select:focus, input:focus {
+  border: 1px solid var(--interaction-focus-separation);
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 99%;
+  background-position-y: 50%;
+}
+select option {
+  color: white;
+  background-color: black;
+}
+label, legend, fieldset {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; 
+}
+
+
+img.small {
+  height: 1em !important;
+  margin: 0 0 !important;
+  position: relative;
+  top: .2em;
+}
+.black_desat {
+  filter: saturate(0) contrast(0.1);
+}
+
+span.control {
+  color: var(--interaction-a);
+}
+span.control:hover {
+  color: var(--interaction-a-hover);
+}
+
+.interactive {
+  background-color: var(--interaction-background);
+  color: var(--interaction);
+  border: 1px outset var(--interaction-separation);
+}
+.interactive:hover {
+  background-color: var(--interaction-hover-background);
+  color: var(--interaction-hover);
+  border: 1px inset var(--interaction-hover-separation);
+}
+.control {
+  /* leave as-is */
+}
+span.control {
+  font-size: 120%;
+}
+.control:hover {
+  color: var(--interaction-hover);
+}
+
+.textinteractive {
+  color: var(--interaction);
+}
+.textinteractive:hover {
+  color: var(--interaction-hover);
+}
+.draggable {
+  cursor: grab;
+}
+.draggable:hover {
+  //border: 1px dashed var(--interaction-hover-separation);
+}
+.draggable:active {
+  cursor: grabbing;
+  /*color: var(--interaction);*/
+  /*background-color: var(--interaction-background);*/
+}
+
+.aug {
+  --aug-clip-tl1: initial;
+  --aug-clip-br1: initial;
+}
+
+progress {
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* [value] and :note([value]) */
+progress,
+progress::-webkit-progress-bar {
+  background-color: var(--interaction-background);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 2px;
+}
+progress::-moz-progress-bar,
+progress::-webkit-progress-value {
+  background-color: var(--interaction);
+}
+
+.success {
+  color: var(--success);
+}
+.warning {
+  color: var(--warning);
+}
+.danger {
+  color: var(--danger);
+}
+progress[value].success {
+  background-color: var(--success);
+  border: 1px solid var(--success);
+}
+progress[value].success::-moz-progress-bar {
+  -background-color: var(--success);
+}

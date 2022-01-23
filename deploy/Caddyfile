@@ -1,0 +1,18 @@
+dev.dmr.tools {
+	#root /srv/dev.dmr.tools/
+	#this goes to an ssh -R 2052:localhost:8080 on dev laptop for frontend
+	proxy / http://dockerhost:2052/ {
+	        transparent
+	}
+	#this goes to an ssh -R 2053:localhost:8100 on dev laptop for backend
+	proxy /admin/ http://dockerhost:2053/ { transparent }
+	proxy /stripe/ http://dockerhost:2053/ { transparent }
+	proxy /api-auth/ http://dockerhost:2053/ { transparent }
+	proxy /cheep/ http://dockerhost:2053/ { transparent }
+	proxy /api/ http://dockerhost:2053/ { transparent }
+	proxy /bes/ http://dockerhost:2053/ { transparent }
+	proxy /u/ http://dockerhost:2053/ { transparent }
+
+	tls letsencrypt@tarxvf.tech { }
+}
+
