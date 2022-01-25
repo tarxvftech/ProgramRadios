@@ -14,6 +14,29 @@ Later, open repeater databases might allow for richer features - I'd
 like to use something like ipfs or GunDB as a backend for that to allow
 for easy synchronization.
 
+## Quick Start
+Get the full dev environment set up in docker by doing `make img`.
+Once you've built the image, you can `make localdev` which will run with the current files mounted into the image so you can get live edits on the running code with the benefit of django.
+
+`make localdev` drops you into a shell in the image. 
+
+In the docker container you can `make fulldev` which uses screen to allow you to run the backend
+and frontend separately, plus the django-q runner in another tab. The
+frontend and backend dev servers should automatically start and run as
+long as you've defined an envfile. This includes creating and migrating
+the django database.
+
+When mounting over the top of the image, you'll have to re-run npm
+install before `npm run serve` works. This will manifest as `Error:
+Cannot find module '@vue/cli-plugin-typescript'` in the `0 front` shell
+of screen. Once it reinstalls `npm run serve` will give you the frontend
+change-reactive development server on port 8080.
+
+It should present as a fairly standard Vue3 project and a fairly standard
+django project. Their interactions are not well defined yet, but fairly
+limited (as of writing (2022 01 24) being confined to requesting available
+firmware images.
+
 ## My Priorities
 Anyway here's a list of things I want to do most immediately, in order:
 
