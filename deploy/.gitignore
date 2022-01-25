@@ -1,6 +1,4 @@
-db/
 radio_firmware/
 env
 prodenv
-data/
 makefile

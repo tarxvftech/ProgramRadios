@@ -45,6 +45,6 @@ defbce "on" #fixes vim 256 colors with non-black background color
 screen -t front
 stuff "cd /frontend; npm run serve"
 screen -t back
-stuff "cd /backend; make runserver"
+stuff "cd /backend; . srcme envfile; make runserver"
 screen -t qcluster
 stuff "cd /backend; echo '. srcme envfile; python manage.py qcluster' "
